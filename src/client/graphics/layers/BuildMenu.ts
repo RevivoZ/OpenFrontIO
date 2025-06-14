@@ -15,6 +15,7 @@ import { EventBus } from "../../../core/EventBus";
 import { Cell, Gold, PlayerActions, UnitType } from "../../../core/game/Game";
 import { TileRef } from "../../../core/game/GameMap";
 import { GameView } from "../../../core/game/GameView";
+import { BuildMenuClosedEvent, BuildMenuOpenedEvent } from "../../InputHandler";
 import { BuildUnitIntentEvent } from "../../Transport";
 import { renderNumber } from "../../Utils";
 import { Layer } from "./Layer";
@@ -406,12 +407,18 @@ export class BuildMenu extends LitElement implements Layer {
   hideMenu() {
     this._hidden = true;
     this.requestUpdate();
+    this.eventBus.emit(new BuildMenuClosedEvent());
   }
 
   showMenu(clickedTile: TileRef) {
     this.clickedTile = clickedTile;
     this._hidden = false;
     this.refresh();
+    this.eventBus.emit(
+      new BuildMenuOpenedEvent(
+        new Cell(this.game.x(clickedTile), this.game.y(clickedTile)),
+      ),
+    );
   }
 
   private refresh() {

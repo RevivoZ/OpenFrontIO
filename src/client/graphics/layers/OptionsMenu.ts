@@ -111,6 +111,11 @@ export class OptionsMenu extends LitElement implements Layer {
     this.eventBus.emit(new RefreshGraphicsEvent());
   }
 
+  private onToggleNukePreviewButtonClick() {
+    this.userSettings.toggleNukePreview();
+    this.requestUpdate();
+  }
+
   private onToggleRandomNameModeButtonClick() {
     this.userSettings.toggleRandomName();
   }
@@ -211,6 +216,11 @@ export class OptionsMenu extends LitElement implements Layer {
             onClick: this.onToggleDarkModeButtonClick,
             title: "Dark Mode",
             children: "🌙: " + (this.userSettings.darkMode() ? "On" : "Off"),
+          })}
+          ${button({
+            onClick: this.onToggleNukePreviewButtonClick,
+            title: "Nuke Preview",
+            children: "☢️: " + (this.userSettings.nukePreview() ? "On" : "Off"),
           })}
           ${button({
             onClick: this.onToggleRandomNameModeButtonClick,

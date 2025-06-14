@@ -1,4 +1,5 @@
 import { EventBus, GameEvent } from "../core/EventBus";
+import { Cell } from "../core/game/Game";
 import { UnitView } from "../core/game/GameView";
 import { UserSettings } from "../core/game/UserSettings";
 import { ReplaySpeedMultiplier } from "./utilities/ReplaySpeedMultiplier";
@@ -76,6 +77,12 @@ export class ShowEmojiMenuEvent implements GameEvent {
     public readonly y: number,
   ) {}
 }
+
+export class BuildMenuOpenedEvent implements GameEvent {
+  constructor(public readonly tile: Cell) {}
+}
+
+export class BuildMenuClosedEvent implements GameEvent {}
 
 export class DoBoatAttackEvent implements GameEvent {}
 
