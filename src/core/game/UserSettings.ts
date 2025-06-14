@@ -29,6 +29,10 @@ export class UserSettings {
     return this.get("settings.darkMode", false);
   }
 
+  nukePreview() {
+    return this.get("settings.nukePreview", false);
+  }
+
   leftClickOpensMenu() {
     return this.get("settings.leftClickOpensMenu", false);
   }
@@ -57,6 +61,10 @@ export class UserSettings {
 
   toggleFxLayer() {
     this.set("settings.specialEffects", !this.fxLayer());
+  }
+
+  toggleNukePreview() {
+    this.set("settings.nukePreview", !this.nukePreview());
   }
 
   toggleDarkMode() {

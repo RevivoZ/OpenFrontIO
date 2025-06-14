@@ -18,6 +18,7 @@ import { Leaderboard } from "./layers/Leaderboard";
 import { MainRadialMenu } from "./layers/MainRadialMenu";
 import { MultiTabModal } from "./layers/MultiTabModal";
 import { NameLayer } from "./layers/NameLayer";
+import { NukePreviewLayer } from "./layers/NukePreviewLayer";
 import { OptionsMenu } from "./layers/OptionsMenu";
 import { PlayerInfoOverlay } from "./layers/PlayerInfoOverlay";
 import { PlayerPanel } from "./layers/PlayerPanel";
@@ -210,6 +211,7 @@ export function createRenderer(
     new TerritoryLayer(game, eventBus, transformHandler),
     structureLayer,
     new UnitLayer(game, eventBus, transformHandler),
+    new NukePreviewLayer(game, eventBus, transformHandler),
     new FxLayer(game),
     new UILayer(game, eventBus, transformHandler),
     new NameLayer(game, transformHandler),
