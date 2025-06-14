@@ -113,6 +113,7 @@ npm run start:server-dev
 - `/src/core` - Shared game logic
 - `/src/server` - Backend game server
 - `/resources` - Static assets (images, maps, etc.)
+- `/premium-extension` - Chrome extension that applies a purple theme for premium users
 
 ## 📝 License
 

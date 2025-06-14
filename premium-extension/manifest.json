@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "OpenFront Premium Theme",
+  "version": "1.0",
+  "description": "Change the game theme to purple for premium users.",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_title": "OpenFront Premium Theme"
+  }
+}
